@@ -1,0 +1,12 @@
+diff --git a/node_modules/@dot-i/k8s-operator/dist/operator.js b/node_modules/@dot-i/k8s-operator/dist/operator.js
+index 1f05a58..87c438e 100644
+--- a/node_modules/@dot-i/k8s-operator/dist/operator.js
++++ b/node_modules/@dot-i/k8s-operator/dist/operator.js
+@@ -334,6 +334,7 @@ class Operator {
+         }
+     }
+     errorToJson(err) {
++        console.error("ERRR: ", err);
+         err = (0, serialize_error_1.serializeError)(err);
+         if (typeof err === 'string') {
+             return err;
