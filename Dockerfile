@@ -6,6 +6,7 @@ COPY package*  /app/
 COPY yarn.lock  /app/yarn.lock
 COPY tsconfig.json  /app/tsconfig.json
 RUN yarn install
+RUN yarn install
 
 FROM setup
 
