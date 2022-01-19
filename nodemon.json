@@ -3,5 +3,5 @@
     "src"
   ],
   "ext": "js,ts,json",
-  "exec": "ts-node -C ttypescript"
+  "exec": "ts-node"
 }

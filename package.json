@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/paulrostorp/k8s-mongodb-tenant-operator#readme",
   "dependencies": {
-    "typescript": "^4.1.2"
+    "@dot-i/k8s-operator": "^1.2.1",
+    "@kubernetes/client-node": "^0.16.2",
+    "mongodb": "^4.3.1",
+    "typescript": "^4.1.2",
+    "winston-logfmt": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "eslint": "^7.14.0",
