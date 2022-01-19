@@ -1,4 +1,4 @@
-import Operator, { OperatorLogger, ResourceEvent, ResourceEventType } from "@dot-i/k8s-operator";
+import Operator, { ResourceEvent, ResourceEventType } from "@dot-i/k8s-operator";
 import { MongoClient } from "mongodb";
 import { createUser, deleteUser } from "./manageUsers";
 import { logger } from "./logger";
@@ -6,10 +6,13 @@ import { MongoDBUser, MONGO_DB_USER } from "./MongoDBUser";
 
 export class TenantOperator extends Operator {
   mongoClient: MongoClient;
-  constructor(logger?: OperatorLogger) {
+  constructor() {
     super(logger);
     const mongoUri = process.env.MONGO_CLUSTER_ADMIN_URI;
-    if (!mongoUri || mongoUri == "") throw new Error("Missing `MONGO_CLUSTER_ADMIN_URI` environment variable");
+    if (!mongoUri || mongoUri == "") {
+      logger.error("Missing `MONGO_CLUSTER_ADMIN_URI` environment variable");
+      process.exit(9);
+    }
 
     this.mongoClient = new MongoClient(mongoUri);
   }
