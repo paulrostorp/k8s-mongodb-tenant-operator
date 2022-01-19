@@ -9,7 +9,6 @@ kubectl apply -f ./manifests/crds/
 ```
 
 ### Install the operator
-see [manifests/operator.yaml] for more
 
 ```yaml
 apiVersion: apps/v1
@@ -47,7 +46,7 @@ spec:
               key: MONGO_DB_HOST 
       restartPolicy: Always
 ```
-
+If your cluster has RBAC enabled, see the detailed example in the `/manifests` directory.
 ### Create a mongoDB tenant / user
 
 Apply `MongoDBUser` custom resource to your cluster:

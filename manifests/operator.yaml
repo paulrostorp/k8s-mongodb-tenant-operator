@@ -15,6 +15,7 @@ spec:
       labels:
         app: mongodb-tenant-operator
     spec:
+      serviceAccountName: mongodb-tenant-operator-service-account
       containers:
       - name:  mongodb-tenant-operator
         image: ghcr.io/paulrostorp/k8s-mongodb-tenant-operator:latest
