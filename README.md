@@ -60,7 +60,7 @@ metadata:
 spec:
   dbName: my-awesome-db
   roles:
-    - "dbAdmin"
+    - "dbOwner"
 ```
 
 This creates a mongodb user as specified and once successful, creates a secret in the same namespace, in the format of `<db name>.<user name>.credentials`.
